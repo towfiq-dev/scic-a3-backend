@@ -111,7 +111,7 @@ async function run() {
       res.send(result)
     })
 
-    // ─── ADMIN ROUTES ────────────────────────────────────────────────
+    //ADMIN ROUTES 
     app.get('/admin/bookings', verifyToken, async(req: Request, res: Response)=>{
       const result = await bookingCollection.find().toArray()
       res.send(result)
