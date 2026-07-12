@@ -113,9 +113,6 @@ async function run() {
     })
 
     // ─── ADMIN ROUTES ────────────────────────────────────────────────
-    // NOTE: These are admin-only endpoints. In production, add role-based
-    //       authorization to ensure only admins can access these.
-    // Get ALL bookings (admin view)
     app.get('/admin/bookings', verifyToken, async(req: Request, res: Response)=>{
       const result = await bookingCollection.find().toArray()
       res.send(result)
@@ -143,7 +140,7 @@ async function run() {
 run().catch(console.dir);
 
 app.get('/', (req: Request, res: Response)=>{
-  res.send('Wanderlust server is running')
+  res.send('elevate-journey server is running')
 })
 
 app.listen(port, ()=>{
