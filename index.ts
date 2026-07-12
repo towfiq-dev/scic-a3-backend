@@ -89,8 +89,7 @@ async function run() {
       res.send(result)
     })
 
-    // ─── BOOKINGS ───────────────────────────────────────────────────
-
+    // ─── BOOKINGS 
     app.post('/bookings', verifyToken, async(req: Request, res: Response)=>{
       const bookings = req.body
       const result = await bookingCollection.insertOne(bookings)
