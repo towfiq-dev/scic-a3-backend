@@ -44,7 +44,7 @@ const verifyToken = async(req: Request, res: Response, next: NextFunction)=>{
 async function run() {
   try {
     //await client.connect();
-    const db = client.db("wanderlust");
+    const db = client.db(process.env.DB_NAME);
     const destinationCollection = db.collection("destination");
     const bookingCollection = db.collection("bookings");
 
