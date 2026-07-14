@@ -1,4 +1,4 @@
-# 🛒 Wanderlust — Server
+# 🛒 Elevate Journeys — Server
 
 **RESTful API for a Travel & Destination Booking Platform**, built with **Node.js**, **Express**, and **TypeScript**, using **MongoDB** as the data store and **JWT/JWKS-based authentication** to secure protected routes.
 
@@ -6,7 +6,7 @@
 
 ## 📖 Overview
 
-This is the backend service powering the Wanderlust travel and destination booking platform. Built with Express and TypeScript, it provides a clean, RESTful API layer that sits between the frontend client and a MongoDB database, handling everything from destination management to booking creation and cancellation.
+This is the backend service powering the Elevate Journeys travel and destination booking platform. Built with Express and TypeScript, it provides a clean, RESTful API layer that sits between the frontend client and a MongoDB database, handling everything from destination management to booking creation and cancellation.
 
 The API is designed around two core resources — destinations and bookings — with public read access for browsing (so anyone can explore destinations without logging in) and token-verified write access for anything that creates, modifies, or deletes data. Authentication is handled through JWT verification against a remote JWKS endpoint, meaning the server never issues or stores tokens itself — it simply trusts and verifies tokens issued by the connected client's auth system (BetterAuth), keeping the auth logic decoupled from the API layer.
 
