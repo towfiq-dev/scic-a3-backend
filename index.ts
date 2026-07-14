@@ -49,7 +49,7 @@ async function run() {
     const destinationCollection = db.collection("destination");
     const bookingCollection = db.collection("bookings");
 
-    // ─── DESTINATIONS ───────────────────────────────────────────────
+    // ─── DESTINATIONS
 
     app.post('/destination', verifyToken, async(req: Request, res: Response)=>{
       const destinationData = req.body
