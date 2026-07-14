@@ -6,7 +6,13 @@
 
 ## 📖 Overview
 
-This is the backend service powering the Wanderlust travel platform. It exposes a clean set of REST endpoints for managing travel destinations and user bookings, with token-verified access control on every sensitive route and an admin layer for platform-wide statistics.
+This is the backend service powering the Wanderlust travel and destination booking platform. Built with Express and TypeScript, it provides a clean, RESTful API layer that sits between the frontend client and a MongoDB database, handling everything from destination management to booking creation and cancellation.
+
+The API is designed around two core resources — destinations and bookings — with public read access for browsing (so anyone can explore destinations without logging in) and token-verified write access for anything that creates, modifies, or deletes data. Authentication is handled through JWT verification against a remote JWKS endpoint, meaning the server never issues or stores tokens itself — it simply trusts and verifies tokens issued by the connected client's auth system (BetterAuth), keeping the auth logic decoupled from the API layer.
+
+On top of the core CRUD functionality, the server also includes a dedicated admin layer: routes that aggregate platform-wide data — total destinations listed, total bookings made, and total revenue generated — using MongoDB's aggregation pipeline to compute figures like revenue directly at the database level rather than in application code. This keeps the admin dashboard fast and the business logic centralized in one place.
+
+Overall, the project reflects a typical production-style backend structure: environment-based configuration, a single MongoDB connection reused across all routes, consistent error handling for unauthorized/forbidden access, and a route structure that's easy to extend as the platform grows.
 
 <br>
 
